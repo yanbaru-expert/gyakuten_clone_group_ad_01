@@ -10,13 +10,12 @@ class TrainingsController < ApplicationController
 
   def create
     Training.create(training_params)
-    redirect_to :action => :index
+    redirect_to action: :index
   end
 
   private
 
   def training_params
-    params.require(:training).permit(:image,:content)
+    params.require(:training).permit(:image, :content)
   end
-
 end

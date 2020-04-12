@@ -1,4 +1,4 @@
 <% @trainings.each do |training| %>
-  <%= image_tag training.image_url(:thumb) %>
+  <%= image_tag training.image_url(:thumb).to_s %>
   <%= training.content %>
 <% end %>
