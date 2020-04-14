@@ -1,4 +1,8 @@
+<div class="form-group">
+  <a class="btn btn-primary btn-block" href="/trainings/new" role="button">運動投稿画面へ</a>
+</div>
+
 <% @trainings.each do |training| %>
-  <%= image_tag training.image_url(:thumb).to_s %>
+  <%= image_tag training.image_url.to_s %>
   <%= training.content %>
 <% end %>
