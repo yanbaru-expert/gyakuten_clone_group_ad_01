@@ -2,7 +2,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
   storage :file
   process convert: "jpg"
-  process :resize_to_limit => [200, 200]
+  process resize_to_limit: [200, 200]
 
   # 保存するディレクトリ名
   def store_dir
@@ -25,8 +25,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   protected
-    def secure_token
-      var = :"@#{mounted_as}_secure_token"
-      model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.uuid)
-    end
+
+  def secure_token
+    var = :"@#{mounted_as}_secure_token"
+    model.instance_variable_get(var) || model.instance_variable_set(var, SecureRandom.uuid)
+  end
 end
