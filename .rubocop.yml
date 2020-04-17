@@ -62,11 +62,11 @@ Metrics/BlockLength:
   Exclude:
     - 'lib/tasks/auto_annotate_models.rake'
 
-# Lint/RaiseException:
-#   Enabled: true
-#
-# Lint/StructNewOverride:
-#   Enabled: true
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
 
 Style/HashEachMethods:
   Enabled: true
