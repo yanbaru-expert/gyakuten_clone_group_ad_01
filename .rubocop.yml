@@ -58,6 +58,16 @@ Metrics/AbcSize:
   Exclude:
     - "bin/bundle"
 
+Metrics/BlockLength:
+  Exclude:
+    - 'lib/tasks/auto_annotate_models.rake'
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
 Style/HashEachMethods:
   Enabled: true
 
@@ -66,7 +76,3 @@ Style/HashTransformKeys:
 
 Style/HashTransformValues:
   Enabled: true
-
-Metrics/BlockLength:
-  Exclude:
-    - 'lib/tasks/auto_annotate_models.rake'
