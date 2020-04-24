@@ -15,6 +15,9 @@ gem "rmagick"
 gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
+gem "kaminari"
+gem "bootstrap", "~> 4.1.1"
+gem "jquery-rails"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
