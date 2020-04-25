@@ -10,15 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_25_125150) do
+ActiveRecord::Schema.define(version: 2020_04_25_222543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "columns", force: :cascade do |t|
-    t.string "date"
-    t.string "title"
-    t.string "detail"
+    t.string "date", null: false
+    t.string "title", null: false
+    t.string "detail", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "graphs", force: :cascade do |t|
+    t.integer "userid", null: false
+    t.date "date", null: false
+    t.decimal "temperature", precision: 4, scale: 2, null: false
+    t.decimal "weight", precision: 4, scale: 1, null: false
+    t.integer "symptom", null: false
+    t.text "other"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
