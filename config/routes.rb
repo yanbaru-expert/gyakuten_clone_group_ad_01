@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: "trainings#index"
   resources :meals
   resources :movies
+  resources :columns
 end
