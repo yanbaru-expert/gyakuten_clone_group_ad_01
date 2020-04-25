@@ -38,7 +38,7 @@ h1 {
 
 .pagination {
   justify-content: center;
-  margin: 20px;
+  margin-bottom: 15px;
 }
 
 .movie {
@@ -64,4 +64,8 @@ h1 {
 
 .navbar-light .nav-link:hover{
   background-color: #ccffff;
+}
+
+.card-header {
+  line-height: 8px;
 }
