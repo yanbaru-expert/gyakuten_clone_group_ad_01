@@ -13,5 +13,4 @@ namespace :importcsv do
     Column.destroy_all
     Column.create!(Import.csv_data(path: "db/csv_data/column_data.csv"))
   end
-  
 end
