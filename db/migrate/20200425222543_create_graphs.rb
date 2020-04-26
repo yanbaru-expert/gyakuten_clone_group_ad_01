@@ -1,7 +1,7 @@
 class CreateGraphs < ActiveRecord::Migration[6.0]
   def change
     create_table :graphs do |t|
-      t.integer :user_id, null: false
+      t.references :user, null: false, foreign_key: true
       t.date :date, null: false
       t.decimal :temperature, precision: 4, scale: 2, null: false
       t.decimal :weight, precision: 4, scale: 1, null: false

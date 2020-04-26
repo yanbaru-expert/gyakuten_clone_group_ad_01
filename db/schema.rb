@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_25_222543) do
+ActiveRecord::Schema.define(version: 2020_04_25_125150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,18 +21,6 @@ ActiveRecord::Schema.define(version: 2020_04_25_222543) do
     t.string "detail", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "graphs", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.date "date", null: false
-    t.decimal "temperature", precision: 4, scale: 2, null: false
-    t.decimal "weight", precision: 4, scale: 1, null: false
-    t.integer "symptom", null: false
-    t.text "other"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id", "date"], name: "index_graphs_on_user_id_and_date", unique: true
   end
 
   create_table "meals", force: :cascade do |t|
