@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_04_25_222543) do
   end
 
   create_table "graphs", force: :cascade do |t|
-    t.integer "userid", null: false
+    t.integer "user_id", null: false
     t.date "date", null: false
     t.decimal "temperature", precision: 4, scale: 2, null: false
     t.decimal "weight", precision: 4, scale: 1, null: false
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2020_04_25_222543) do
     t.text "other"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id", "date"], name: "index_graphs_on_user_id_and_date", unique: true
   end
 
   create_table "meals", force: :cascade do |t|
