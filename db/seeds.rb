@@ -42,9 +42,9 @@ graphs = []
     user_id: user.id,
     date: date,
     # to_f を入れておかないと整数になるので注意！
-    temperature: rand(MIN_TEMP..MAX_TEMP).to_f / DIV_CONSTANT
-    weight: rand(MIN_WEIGHT..MAX_WEIGHT).to_f / DIV_CONSTANT
-    symptom: rand(MIN_SYMP..MAX_SYMP)
+    temperature: rand(MIN_TEMP..MAX_TEMP).to_f / DIV_CONSTANT,
+    weight: rand(MIN_WEIGHT..MAX_WEIGHT).to_f / DIV_CONSTANT,
+    symptom: rand(MIN_SYMP..MAX_SYMP),
     other: OTHER + i.to_s
   }
 end
