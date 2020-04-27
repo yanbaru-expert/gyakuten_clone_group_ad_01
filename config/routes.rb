@@ -8,11 +8,11 @@ Rails.application.routes.draw do
       
     end
 
-    resources :trainings
-    root to: "trainings#index"
-    resources :meals
-    resources :users
-    resources :movies
-    resources :columns
-
-  end
+  devise_for :users
+  resources :trainings
+  root to: "trainings#index"
+  resources :meals
+  resources :movies
+  resources :columns
+  resources :graphs
+end

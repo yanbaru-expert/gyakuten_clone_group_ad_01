@@ -31,7 +31,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="nav-item nav-link navbar-text" href="#">アカウント編集</a>
-          <a class="nav-item nav-link navbar-text" href="#">ログアウト</a>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link navbar-text" %>
         </div>
       </li>
     </ul>
