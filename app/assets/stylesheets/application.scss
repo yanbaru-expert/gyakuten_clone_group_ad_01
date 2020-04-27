@@ -69,3 +69,19 @@ h1 {
 .card-header {
   line-height: 8px;
 }
+
+// ログイン画面
+.container-login {
+  @extend .container-fluid;
+  max-width: 576px;
+  padding: 2rem;
+}
+
+// 「ログインしました」などのフラッシュ用スタイル
+.alert-notice {
+  @extend .alert-info;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+}

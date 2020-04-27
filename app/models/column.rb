@@ -3,9 +3,9 @@
 # Table name: columns
 #
 #  id         :bigint           not null, primary key
-#  date       :string
-#  detail     :string
-#  title      :string
+#  date       :string           not null
+#  detail     :string           not null
+#  title      :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
