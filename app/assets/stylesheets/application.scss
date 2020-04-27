@@ -35,3 +35,37 @@ h1 {
 .card-footer {
   height: 50px;
 }
+
+.pagination {
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.movie {
+  text-align: center;
+  margin: 20px;
+}
+
+.navbar-text {
+  text-indent: 15px;
+  line-height: 15px;
+}
+
+.dropdown-menu a{
+  display: block;
+}
+
+.navbar-light .nav-link:hover{
+  background-color: #000000;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all  1s ease;}
+
+.navbar-light .nav-link:hover{
+  background-color: #ccffff;
+}
+
+.card-header {
+  line-height: 8px;
+}
