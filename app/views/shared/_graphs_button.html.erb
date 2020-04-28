@@ -1,3 +1,4 @@
+<%= javascript_pack_tag 'graphs' %>
 <div class="row">
   <div class="col-6">
     <button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#new-modal">
@@ -9,15 +10,17 @@
       記録の修正
     </button>
   </div>
-  <div class="col-6">
-    <button type="button" class="btn btn-default btn-block border-primary" data-toggle="modal" data-target="#new-modal">
-      開始(仮)
-    </button>
+  <div class="input-group col-6 pr-sm-3 mt-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">開始</span>
+    </div>
+    <input type="text" id="date-form" class="form-control bg-white text-center">
   </div>
-    <div class="col-6">
-    <button type="button" class="btn btn-default btn-block border-primary" data-toggle="modal" data-target="#new-modal">
-      終了(仮)
-    </button>
+  <div class="input-group col-6 pl-sm-3 mt-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">終了</span>
+    </div>
+    <input type="text" id="date-form" class="form-control bg-white text-center">
   </div>
 </div>
 
