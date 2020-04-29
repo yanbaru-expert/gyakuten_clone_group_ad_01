@@ -1,16 +1,14 @@
-<div class="mx-auto" style="width: 700px;">
-  <h1>運動記録更新</h1>
-    <section id="training_form">
-      <div class="training_form-container">
-        <%= form_with model: @training, url: "/trainings/#{@training.id}", method: :patch, local: true do |f| %>
-          <%= f.file_field :image %>
-          <div class="form-group">
-            <%= f.text_area :content, class: 'form-control', rows:5, required: true %>
-            <%= f.submit "更新", class: 'btn btn-primary btn-block' %>
-            <hr>
-            <a class="btn btn-info btn-block" href="/trainings" role="button">運動投稿一覧へ</a>
-          </div>
-        <% end %>
+<h1 class="my-3">運動記録更新</h1>
+<section id="training_form">
+  <div class="training_form-container">
+    <%= form_with model: @training, url: "/trainings/#{@training.id}", method: :patch, local: true do |f| %>
+      <%= f.file_field :image %>
+      <div class="form-group my-3">
+        <%= f.text_area :content, class: 'form-control', rows:5, required: true %>
+        <%= f.submit "更新", class: 'btn btn-primary btn-block my-3' %>
+        <hr>
+        <a class="btn btn-info btn-block my-3" href="/trainings" role="button">運動投稿一覧へ</a>
       </div>
-    </section>
-</div>
+    <% end %>
+  </div>
+</section>

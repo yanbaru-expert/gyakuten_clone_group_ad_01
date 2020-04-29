@@ -1,6 +1,5 @@
-<div class="mx-auto" style="width: 700px;">
-  <%= paginate @movies %>
-  <% @movies.each do |movie| %>
+<%= paginate @movies %>
+<% @movies.each do |movie| %>
   <% iframe = content_tag(
     :iframe,
     '', # empty body
@@ -11,6 +10,5 @@
     allowfullscreen: true
     ) %>
   <%= content_tag(:div, iframe, class: 'movie') %>
-  <% end %>
-  <%= paginate @movies %>
-</div>
+<% end %>
+<%= paginate @movies %>

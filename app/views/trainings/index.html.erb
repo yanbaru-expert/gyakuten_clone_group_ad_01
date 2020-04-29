@@ -1,37 +1,35 @@
-<div class="mx-auto" style="width: 700px;">
-  <div class="form-group">
-    <a class="btn btn-primary btn-block" href="/trainings/new" role="button">運動投稿画面へ</a>
-  </div>
-
-  <% @trainings.each do |training| %>
-    <div class="card">
-      <% if training.image? %>
-        <div class="card-header text-center">
-          <img class="card-img-top d-block">
-          <%= image_tag training.image_url.to_s %>
-        </div>
-        <div class="card-body">
-          <p class="card-text"><%= simple_format(training.content) %></p>
-        </div>
-        <div class="card-footer">
-          【投稿日】<%= l training.created_at, format: :long %>
-          <div class ="float-right">
-            <%= link_to "編集", edit_training_path(training), method: :get %>
-            <%= link_to "削除", training, method: :delete, data: { confirm: "削除しますか?" } %>
-          </div>
-        </div>
-      <% else %>
-        <div class="card-body">
-          <p class="card-text"><%= simple_format(training.content) %></p>
-        </div>
-        <div class="card-footer">
-          【投稿日】<%= l training.created_at, format: :long %>
-          <div class ="float-right">
-            <%= link_to "編集", edit_training_path(training), method: :get %>
-            <%= link_to "削除", training, method: :delete, data: { confirm: "削除しますか?" } %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
+<div class="form-group my-3">
+  <a class="btn btn-primary btn-block my-3" href="/trainings/new" role="button">運動投稿画面へ</a>
 </div>
+
+<% @trainings.each do |training| %>
+  <div class="card my-3">
+    <% if training.image? %>
+      <div class="card-header text-center">
+        <img class="card-img-top d-block">
+        <%= image_tag training.image_url.to_s %>
+      </div>
+      <div class="card-body">
+        <p class="card-text"><%= simple_format(training.content) %></p>
+      </div>
+      <div class="card-footer">
+        【投稿日】<%= l training.created_at, format: :long %>
+        <div class ="float-right">
+          <%= link_to "編集", edit_training_path(training), method: :get %>
+          <%= link_to "削除", training, method: :delete, data: { confirm: "削除しますか?" } %>
+        </div>
+      </div>
+    <% else %>
+      <div class="card-body">
+        <p class="card-text"><%= simple_format(training.content) %></p>
+      </div>
+      <div class="card-footer">
+        【投稿日】<%= l training.created_at, format: :long %>
+        <div class ="float-right">
+          <%= link_to "編集", edit_training_path(training), method: :get %>
+          <%= link_to "削除", training, method: :delete, data: { confirm: "削除しますか?" } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
