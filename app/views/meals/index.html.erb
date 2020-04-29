@@ -1,9 +1,9 @@
-<div class="form-group">
+<div class="form-group my-3">
   <a class="btn btn-primary btn-block" href="/meals/new" role="button">食事投稿画面へ</a>
 </div>
 
 <% @meals.each do |meal| %>
-  <div class="card">
+  <div class="card my-3">
     <% if meal.image? %>
       <div class="card-header text-center">
         <img class="card-img-top d-block">
