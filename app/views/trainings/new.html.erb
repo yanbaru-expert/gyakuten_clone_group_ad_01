@@ -1,16 +1,14 @@
-<div class="mx-auto" style="width: 700px;">
-  <h1>運動新規投稿</h1>
-    <section id="training_form">
-      <div class="training_form-container">
-        <%= form_with model: @training, local: true do |f| %>
-          <%= f.file_field :image %>
-          <div class="form-group">
-            <%= f.text_area :content, class: 'form-control', rows:5, required: true %>
-            <%= f.submit "投稿", class: 'btn btn-primary btn-block' %>
-            <hr>
-            <a class="btn btn-info btn-block" href="/trainings" role="button">運動投稿一覧へ</a>
-          </div>
-        <% end %>
+<h1>運動新規投稿</h1>
+<section id="training_form">
+  <div class="training_form-container">
+    <%= form_with model: @training, local: true do |f| %>
+      <%= f.file_field :image %>
+      <div class="form-group">
+        <%= f.text_area :content, class: 'form-control', rows:5, required: true %>
+        <%= f.submit "投稿", class: 'btn btn-primary btn-block' %>
+        <hr>
+        <a class="btn btn-info btn-block" href="/trainings" role="button">運動投稿一覧へ</a>
       </div>
-    </section>
-</div>
+    <% end %>
+  </div>
+</section>
