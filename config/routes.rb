@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
     namespace :admin do
-      resources :trainings
-      resources :meals
       resources :users
       root to: "trainings#index"
       
