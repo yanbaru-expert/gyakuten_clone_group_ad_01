@@ -1,0 +1,34 @@
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          体調記録
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="nav-item nav-link navbar-text" href="/graphs">グラフ</a>
+          <a class="nav-item nav-link navbar-text" href="/movies">動画</a>
+          <a class="nav-item nav-link navbar-text" href="/columns">コラム</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          投稿
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="nav-item nav-link navbar-text" href="/meals">食事投稿一覧へ</a>
+          <a class="nav-item nav-link navbar-text" href="#">運動投稿一覧へ</a>
+          <a class="nav-item nav-link navbar-text" href="#">独り言</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          オプション
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="nav-item nav-link navbar-text" href="#">アカウント編集</a>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link navbar-text" %>
+        </div>
+      </li>
+    </ul>
+
+    <!-- TODO:暫定対応として管理者の文字列固定 将来的にはログインした人のニックネームが入る -->
+    <ul class="navbar-nav navbar-right text-dark">管理者</ul>

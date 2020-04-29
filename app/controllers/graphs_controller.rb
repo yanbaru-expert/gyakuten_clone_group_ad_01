@@ -1,5 +1,5 @@
 class GraphsController < ApplicationController
   def index
-    #    @graphs = User.graphs.order(date: "ASC")
+    gon.records = Graph.chart_data(current_user)
   end
 end

@@ -3,8 +3,8 @@ EMAIL = "test@example.com".freeze
 PASSWORD = "password".freeze
 
 # データの入力範囲
-START_DATE = Date.today - 11.months
-END_DATE = Date.today + 1.month
+START_DATE = Time.zone.today - 11.months
+END_DATE = Time.zone.today + 1.month
 
 # 1/(NO_RECORD_CONSTANT) の確率でデータを記録しない
 # （記録が一部欠けていてもグラフが正常に描けるかをチェックするため）
@@ -49,4 +49,4 @@ graphs = []
   }
 end
 Graph.create!(graphs)
-puts "体重の初期データ投入に成功しました！"
+puts "体調管理の初期データ投入に成功しました！"

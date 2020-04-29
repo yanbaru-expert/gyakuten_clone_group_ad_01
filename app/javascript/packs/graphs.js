@@ -1,5 +1,9 @@
 document.addEventListener('turbolinks:load', () => {
 
+  // 「折れ線」グラフのデータ
+  let lineLabel = gon.chart_label
+  let lineData = gon.chart_data
+  
   const TODAY = new Date(new Date().setHours(0,0,0,0))
   const THREE_MONTH_AGO = new Date(TODAY.getFullYear(), TODAY.getMonth() - 3, TODAY.getDate())
 
@@ -22,5 +26,5 @@ document.addEventListener('turbolinks:load', () => {
     // 選択できない日付
     disable: DISABLE_DATES
   })
-  
+
 })
