@@ -12,6 +12,45 @@ document.addEventListener('turbolinks:load', () => {
   const chartTemperatureContext = document.getElementById("chart-temp").getContext('2d')
   const chartWeightContext = document.getElementById("chart-weight").getContext('2d')
 
+  let chartTemperature
+  let chartWeight
+
+  // 日付の古い方・新しい方を取得する関数
+  const minDate = (date1, date2) => (date1 < date2) ? date1 : date2
+  const maxDate = (date1, date2) => (date1 > date2) ? date1 : date2
+
+  // データの初日・最終日
+  const START_DATE = convertDate(gon.records[0].date)
+  const END_DATE = convertDate(gon.records[gon.records.length - 1].date)
+
+  // 引数の日付から今日までのグラフを描く関数
+  const drawGraphToToday = (from) => {
+       // データが存在する範囲に修正
+       from = maxDate(from, START_DATE)
+       let to = minDate(TODAY, END_DATE)
+       drawGraph(from, to)
+  }
+
+  // 過去1週間のグラフを描くボタン
+  document.getElementById('a-week-button').addEventListener('click', () => {
+    drawGraphToToday(A_WEEK_AGO)
+  })
+
+  // 過去2週間のグラフを描くボタン
+  document.getElementById('two-weeks-button').addEventListener('click', () => {
+     drawGraphToToday(TWO_WEEKS_AGO)
+  })
+
+  // 過去1ヶ月のグラフを描くボタン
+  document.getElementById('a-month-button').addEventListener('click', () => {
+     drawGraphToToday(A_MONTH_AGO)
+  })
+
+  // 過去3ヶ月のグラフを描くボタン
+  document.getElementById('three-months-button').addEventListener('click', () => {
+     drawGraphToToday(THREE_MONTHS_AGO)
+  })
+
   // 期間を指定してグラフを描画する
   const drawGraph = (from, to) => {
     // from から to までの期間のデータに絞る
@@ -83,22 +122,38 @@ document.addEventListener('turbolinks:load', () => {
         }
     }
 
-    new Chart(chartTemperatureContext, {
-        type: 'line',
-        data: temperatureData,
-        options: temperatureOption
-    })
+    if (!chartTemperature) {
+        // グラフが存在しないときは，作成する
+        chartTemperature = new Chart(chartTemperatureContext, {
+            type: 'line',
+            data: temperatureData,
+            options: temperatureOption
+        })
+    } else {
+        // グラフが存在するときは，更新する
+        chartTemperature.data = temperatureData
+        chartTemperature.options = temperatureOption
+        chartTemperature.update()
+    }
 
-    new Chart(chartWeightContext, {
-        type: 'line',
-        data: weightData,
-        options: weightOption
-    })
+    if (!chartWeight) {
+        // グラフが存在しないときは，作成する
+        chartWeight = new Chart(chartWeightContext, {
+            type: 'line',
+            data: weightData,
+            options: weightOption
+        })
+    } else {
+        // グラフが存在するときは，更新する
+        chartWeight.data = weightData
+        chartWeight.options = weightOption
+        chartWeight.update()
+    }
 
   }
 
   // グラフの初期表示
-  drawGraph(A_WEEK_AGO, TODAY)
+  drawGraphToToday(A_WEEK_AGO)
 
   // TODO:選択できない日付データを仮で設定
   // 将来的にはユーザーが体調管理データを入力した日付を設定する
