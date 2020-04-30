@@ -8,6 +8,10 @@ document.addEventListener('turbolinks:load', () => {
   const A_MONTH_AGO = new Date(TODAY.getFullYear(), TODAY.getMonth() - 1, TODAY.getDate() + 1)
   const THREE_MONTHS_AGO = new Date(TODAY.getFullYear(), TODAY.getMonth() - 3, TODAY.getDate() + 1)
 
+  // TODO:選択できない日付データを仮で設定
+  // 将来的にはユーザーが体調管理データを入力した日付を設定する
+  const DISABLE_DATES = ["2020-04-01", "2020-04-10", "2020-04-20", "2020-04-29"]
+
   // グラフを描画する場所を取得
   const chartTemperatureContext = document.getElementById("chart-temp").getContext('2d')
   const chartWeightContext = document.getElementById("chart-weight").getContext('2d')
@@ -23,13 +27,38 @@ document.addEventListener('turbolinks:load', () => {
   const START_DATE = convertDate(gon.records[0].date)
   const END_DATE = convertDate(gon.records[gon.records.length - 1].date)
 
-  // 引数の日付から今日までのグラフを描く関数
-  const drawGraphToToday = (from) => {
-       // データが存在する範囲に修正
-       from = maxDate(from, START_DATE)
-       let to = minDate(TODAY, END_DATE)
-       drawGraph(from, to)
+  // カレンダー日付変更後のイベント処理
+  const drawGraphForPeriod = () => {
+
+    let from = convertDate(document.getElementById('start-calendar').value)
+    let to = convertDate(document.getElementById('end-calendar').value)
+
+    if (from > to) {
+      alert('終了日は開始日以降の日付に設定してください')
+    } else {
+      drawGraph(from, to)
+    }
   }
+
+  // カレンダーの表示
+  const periodCalendarOption = {
+    // スマートフォンでもカレンダーに「flatpickr」を使用
+    disableMobile: true,
+
+    // 3ヶ月前から本日まで選択可
+    minDate: START_DATE,
+    maxDate: END_DATE,
+
+    // 選択できない日付
+    disable: DISABLE_DATES,
+
+    // 日付選択後のイベント
+    onChange: drawGraphForPeriod
+  }
+
+  // カレンダー
+  const startCalendarFlatpickr = flatpickr('#start-calendar', periodCalendarOption)
+  const endCalendarFlatpickr = flatpickr('#end-calendar', periodCalendarOption)
 
   // 過去1週間のグラフを描くボタン
   document.getElementById('a-week-button').addEventListener('click', () => {
@@ -152,27 +181,22 @@ document.addEventListener('turbolinks:load', () => {
 
   }
 
+  // 引数の日付から今日までのグラフを描く関数
+  const drawGraphToToday = (from) => {
+    // データが存在する範囲に修正
+    from = maxDate(from, START_DATE)
+    let to = minDate(TODAY, END_DATE)
+    drawGraph(from, to)
+
+    // フォームの開始日・終了日を変更する
+    startCalendarFlatpickr.setDate(from)
+    endCalendarFlatpickr.setDate(to)
+  }
+
   // グラフの初期表示
   drawGraphToToday(A_WEEK_AGO)
 
-  // TODO:選択できない日付データを仮で設定
-  // 将来的にはユーザーが体調管理データを入力した日付を設定する
-  const DISABLE_DATES = ["2020-04-01", "2020-04-10", "2020-04-20", "2020-04-30"]
-
   // カレンダーの日本語化
   flatpickr.localize(flatpickr.l10ns.ja)
-
-  // カレンダーの表示
-  flatpickr('#date-form', {
-    // スマートフォンでもカレンダーに「flatpickr」を使用
-    disableMobile: true,
-
-    // 3ヶ月前から本日まで選択可
-    minDate: THREE_MONTHS_AGO,
-    maxDate: TODAY,
-
-    // 選択できない日付
-    disable: DISABLE_DATES
-  })
 
 })
