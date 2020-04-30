@@ -56,6 +56,9 @@ document.addEventListener('turbolinks:load', () => {
     onChange: drawGraphForPeriod
   }
 
+  // カレンダーの日本語化
+  flatpickr.localize(flatpickr.l10ns.ja)
+
   // カレンダー
   const startCalendarFlatpickr = flatpickr('#start-calendar', periodCalendarOption)
   const endCalendarFlatpickr = flatpickr('#end-calendar', periodCalendarOption)
@@ -195,8 +198,5 @@ document.addEventListener('turbolinks:load', () => {
 
   // グラフの初期表示
   drawGraphToToday(A_WEEK_AGO)
-
-  // カレンダーの日本語化
-  flatpickr.localize(flatpickr.l10ns.ja)
 
 })
