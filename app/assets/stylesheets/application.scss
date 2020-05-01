@@ -22,6 +22,12 @@ h1 {
 
 .form-group {
   margin-top: 1rem !important;
+  display: flex;
+}
+
+.form-control {
+  margin-top: 1rem;
+  margin-right: 0.25rem;
 }
 
 .card {
@@ -34,4 +40,66 @@ h1 {
 
 .card-footer {
   height: 50px;
+}
+
+
+#solitudes {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 1rem 1rem 8rem 1rem;
+}
+
+footer {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+// ボタン無効化時のスタイル
+.btn-primary.disabled {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  cursor: auto;
+}
+
+.balloon {
+  display: block;
+  margin: 10px 0;
+}
+
+.solitude-says {
+  display: inline-block;
+  position: relative;
+  display: inline-block;
+  margin: 0 0 0 10px;
+  padding: 5px;
+  border-radius: 12px;
+  background: #cfc;
+  word-break: break-all;
+}
+
+.solitude-says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #cfc;
+  transform: rotate(35deg);
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary.disabled {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+#solitude-button {
+  flex-basis: 50px;
 }
