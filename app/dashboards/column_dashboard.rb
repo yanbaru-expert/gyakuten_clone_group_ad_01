@@ -13,7 +13,7 @@ class ColumnDashboard < Administrate::BaseDashboard
     title: Field::String,
     detail: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -22,30 +22,30 @@ class ColumnDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  id
-  date
-  title
-  detail
+    id
+    date
+    title
+    detail
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  id
-  date
-  title
-  detail
-  created_at
-  updated_at
+    id
+    date
+    title
+    detail
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  date
-  title
-  detail
+    date
+    title
+    detail
   ].freeze
 
   # COLLECTION_FILTERS

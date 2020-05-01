@@ -3,9 +3,9 @@ class DashboardManifest
   # 途中で新しいリソースを追加する時はここに！
   # ここで追加されたリソースから管理画面のroutesを作成 (config/routes.rb参照）
   DASHBOARDS = %i[
-    :movies,
-    :columns,
-    :users,
+    movies
+    columns
+    users
   ].freeze
 
   # `ROOT_DASHBOARD`
