@@ -6,15 +6,17 @@
 # you're free to overwrite the RESTful controller actions.
 module Admin
   class ApplicationController < Administrate::ApplicationController
-    def authenticate_admin
-      # TODO: Add authentication logic here.
-      before_action :authenticate_user!
+    before_action :user_signed_check, :my_authenticate_admin
+
+    # ログインしていない場合、ルートページにリダイレクト
+    def user_signed_check
+      redirect_to root_path unless user_signed_in?
     end
 
-    # Override this value to specify the number of elements to display at a time
-    # on index pages. Defaults to 20.
-    # def records_per_page
-    #   params[:per_page] || 20
-    # end
+    # 管理者でない場合、ルートページにリダイレクト
+    def my_authenticate_admin
+      redirect_to root_path unless current_user.admin?
+    end
+
   end
 end

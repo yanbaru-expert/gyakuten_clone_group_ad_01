@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   namespace :admin do
+    resources :movies
+    resources :columns
     resources :users
-    root to: "trainings#index"
+    root to: "movies#index"
   end
 
   devise_for :users

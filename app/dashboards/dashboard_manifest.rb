@@ -5,6 +5,7 @@ class DashboardManifest
   DASHBOARDS = %i[
     :movies,
     :columns,
+    :users,
   ].freeze
 
   # `ROOT_DASHBOARD`
