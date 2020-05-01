@@ -2,14 +2,10 @@ class DashboardManifest
   # ダッシュボードに追加するresourceをここで定義
   # 途中で新しいリソースを追加する時はここに！
   # ここで追加されたリソースから管理画面のroutesを作成 (config/routes.rb参照）
-  DASHBOARDS = [
-    :admin,
-    :users,
-    :id,
-    :pictures,
-    :trainings,
-    :meals,
-  ]
+  DASHBOARDS = %i[
+    :movies,
+    :columns,
+  ].freeze
 
   # `ROOT_DASHBOARD`
   # at "http://your_site.com/admin"

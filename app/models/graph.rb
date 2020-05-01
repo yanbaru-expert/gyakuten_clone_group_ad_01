@@ -14,7 +14,8 @@
 #
 # Indexes
 #
-#  index_graphs_on_user_id  (user_id)
+#  index_graphs_on_user_id           (user_id)
+#  index_graphs_on_user_id_and_date  (user_id,date) UNIQUE
 #
 # Foreign Keys
 #

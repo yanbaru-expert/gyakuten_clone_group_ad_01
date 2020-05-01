@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-
-    namespace :admin do
-      resources :users
-      root to: "trainings#index"
-      
-    end
+  namespace :admin do
+    resources :users
+    root to: "trainings#index"
+  end
 
   devise_for :users
   resources :trainings

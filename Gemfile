@@ -3,10 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.6.5"
 
+gem "administrate"
 gem "annotate"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "carrierwave"
 gem "coderay"
+gem "devise"
 gem "devise"
 gem "devise-bootstrap-views", "~> 1.0"
 gem "devise-i18n"
@@ -23,9 +25,6 @@ gem "rmagick"
 gem "sass-rails"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
-gem "administrate"
-gem "devise"
-
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
