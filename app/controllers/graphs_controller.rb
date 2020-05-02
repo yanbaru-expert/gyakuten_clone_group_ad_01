@@ -19,7 +19,7 @@ class GraphsController < ApplicationController
 
   def update
     @graph = current_user.graphs.find_by(date: params[:graph][:date])
-    date = l(@graph.date, format: :short)
+    date = l(@graph.date, format: :graph)
     if @graph.nil?
       flash[:alert] = "エラーが発生しました"
     elsif params[:_destroy].nil? && @graph.update(graph_params)
