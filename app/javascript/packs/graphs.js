@@ -126,6 +126,8 @@ document.addEventListener('turbolinks:load', () => {
       // 体温および体重のデータを作成
       let temperatures = records.map((record) => record.temperature)
       let weights = records.map((record) => record.weight)
+      let symptoms = records.map((record) => record.symptom)
+      let others = records.map((record) => record.other)
 
       let temperatureData = {
           labels: dates,
@@ -162,6 +164,9 @@ document.addEventListener('turbolinks:load', () => {
                   },
                   label: function (tooltipItem) {
                       return '体温: ' + tooltipItem.yLabel + '度'
+                  },
+                  afterLabel: function (tooltipItem) {
+                      return [ '体重: ' + weights[tooltipItem.index] + 'kg', '症状: ' + symptom_conv(symptoms[tooltipItem.index]), others[tooltipItem.index]]
                   }
               }
           }
@@ -225,6 +230,15 @@ document.addEventListener('turbolinks:load', () => {
 
     // グラフの初期表示
     drawGraphToToday(A_WEEK_AGO)
-    
+
+  }
+
+  function symptom_conv(symptom)
+  {
+    var result;
+
+    (symptom == 0) ? result = "○調子が良い" : result = "○元気";
+
+    return result;
   }
 })
