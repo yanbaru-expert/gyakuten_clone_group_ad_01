@@ -1,6 +1,9 @@
 # テストユーザー情報
 EMAIL = "test@example.com".freeze
 PASSWORD = "password".freeze
+NICKNAME = "nickname".freeze
+ADMIN = true
+USERFLAG = true
 
 # データの入力範囲
 START_DATE = Time.zone.today - 11.months
@@ -28,6 +31,9 @@ OTHER = "テスト".freeze
 
 user = User.find_or_create_by!(email: EMAIL) do |user|
   user.password = PASSWORD
+  user.nickname = NICKNAME
+  user.admin = ADMIN
+  user.user_flag = USERFLAG
   puts "テストユーザーの初期データインポートに成功しました。"
 end
 
