@@ -8,7 +8,7 @@ class GraphsController < ApplicationController
 
   def create
     @graph = current_user.graphs.build(graph_params)
-    date = @graph.date.strftime("%Y/%-m/%-d")
+    date = l(@graph.date, format: :graph)
     if @graph.save
       flash[:notice] = "#{date}の記録を追加しました"
     else
@@ -19,7 +19,7 @@ class GraphsController < ApplicationController
 
   def update
     @graph = current_user.graphs.find_by(date: params[:graph][:date])
-    date = @graph.date.strftime("%Y/%-m/%-d")
+    date = l(@graph.date, format: :short)
     if @graph.nil?
       flash[:alert] = "エラーが発生しました"
     elsif params[:_destroy].nil? && @graph.update(graph_params)
