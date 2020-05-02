@@ -5,7 +5,8 @@
     </div>
     <%= form.text_field :date, class: 'form-control bg-white', id: "new-calendar" %>
   </div>
-  <small>記録が存在する日付は選択できません</small>
+  <small>記録が存在する日付は選択できません</small><br>
+  <small>記録を編集されたい方は<a class="text-danger" data-toggle="modal" data-target="#edit-modal" data-dismiss="modal">こちら</a></small>
   <div class="input-group mt-3">
     <div class="input-group-prepend">
       <span class="input-group-text">体温</span>
