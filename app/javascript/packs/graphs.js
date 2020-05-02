@@ -8,10 +8,6 @@ document.addEventListener('turbolinks:load', () => {
   const A_MONTH_AGO = new Date(TODAY.getFullYear(), TODAY.getMonth() - 1, TODAY.getDate() + 1)
   const THREE_MONTHS_AGO = new Date(TODAY.getFullYear(), TODAY.getMonth() - 3, TODAY.getDate() + 1)
 
-  // TODO:選択できない日付データを仮で設定
-  // 将来的にはユーザーが体調管理データを入力した日付を設定する
-  const DISABLE_DATES = ["2020-04-01", "2020-04-10", "2020-04-20", "2020-04-29"]
-
   // グラフを描画する場所を取得
   const chartTemperatureContext = document.getElementById("chart-temp").getContext('2d')
   const chartWeightContext = document.getElementById("chart-weight").getContext('2d')
@@ -26,6 +22,17 @@ document.addEventListener('turbolinks:load', () => {
   // データの初日・最終日
   const START_DATE = convertDate(gon.records[0].date)
   const END_DATE = convertDate(gon.records[gon.records.length - 1].date)
+
+  // カレンダーの日本語化
+  flatpickr.localize(flatpickr.l10ns.ja)
+
+  // 新規登録用のカレンダー
+  flatpickr('#new-calendar', {
+      disableMobile: true,
+      // 記録のある日付を選択できないようにする
+      disable: gon.recorded_dates,
+      defaultDate: 'today',
+  })
 
   // カレンダー日付変更後のイベント処理
   const drawGraphForPeriod = () => {
@@ -49,15 +56,9 @@ document.addEventListener('turbolinks:load', () => {
     minDate: START_DATE,
     maxDate: END_DATE,
 
-    // 選択できない日付
-    disable: DISABLE_DATES,
-
     // 日付選択後のイベント
     onChange: drawGraphForPeriod
   }
-
-  // カレンダーの日本語化
-  flatpickr.localize(flatpickr.l10ns.ja)
 
   // カレンダー
   const startCalendarFlatpickr = flatpickr('#start-calendar', periodCalendarOption)

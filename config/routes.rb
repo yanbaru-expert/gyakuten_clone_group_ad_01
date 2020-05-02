@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   resources :movies
   resources :columns
   resources :graphs
+
+  resource :graphs, only: %i[index create update]
 end
