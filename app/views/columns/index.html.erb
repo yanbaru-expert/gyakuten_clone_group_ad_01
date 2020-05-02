@@ -1,0 +1,13 @@
+<%= paginate @columns %>
+<% @columns.each do |column| %>
+<div class="card my-3">
+  <div class="card-header">
+    <h3><%= column.title %></h3>
+    <p class="text-right">【公開日】<%= column.date %></p>
+  </div>
+  <div class="card-body">
+    <%= markdown(column.detail) %>
+  </div>
+</div>
+<% end %>
+<%= paginate @columns %>

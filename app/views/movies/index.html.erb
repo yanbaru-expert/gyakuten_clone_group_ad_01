@@ -1,0 +1,14 @@
+<%= paginate @movies %>
+<% @movies.each do |movie| %>
+  <% iframe = content_tag(
+    :iframe,
+    '', # empty body
+    width: 560,
+    height: 315,
+    src: movie.url,
+    frameborder: 0,
+    allowfullscreen: true
+    ) %>
+  <%= content_tag(:div, iframe, class: 'movie') %>
+<% end %>
+<%= paginate @movies %>

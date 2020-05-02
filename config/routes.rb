@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  resources :trainings
+  devise_for :users
 
   root 'solitudes#index'
+
+  resources :meals
+  resources :movies
+  resources :columns
+  resources :graphs
   resources :solitudes
+  resources :trainings
+
 end

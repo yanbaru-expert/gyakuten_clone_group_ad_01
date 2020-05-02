@@ -12,34 +12,65 @@
   padding: 1rem;
 }
 
-h1 {
-    margin-top: 1rem !important
-}
-
-.btn {
-  margin-top: 1rem !important;
-}
-
-.form-group {
-  margin-top: 1rem !important;
-  display: flex;
-}
-
-.form-control {
-  margin-top: 1rem;
-  margin-right: 0.25rem;
-}
-
-.card {
-  margin-bottom: 1rem !important;
-}
-
 .card-header text-center {
   height: 200px;
 }
 
 .card-footer {
   height: 50px;
+}
+
+.form-group {
+  margin-top: 1rem !important;
+}
+.pagination {
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.movie {
+  text-align: center;
+  margin: 20px;
+}
+
+.navbar-text {
+  text-indent: 15px;
+  line-height: 15px;
+}
+
+.dropdown-menu a{
+  display: block;
+}
+
+.navbar-light .nav-link:hover{
+  background-color: #000000;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all  1s ease;}
+
+.navbar-light .nav-link:hover{
+  background-color: #ccffff;
+}
+
+.card-header {
+  line-height: 8px;
+}
+
+// ログイン画面
+.container-login {
+  @extend .container-fluid;
+  max-width: 576px;
+  padding: 2rem;
+}
+
+// 「ログインしました」などのフラッシュ用スタイル
+.alert-notice {
+  @extend .alert-info;
+}
+
+.alert-alert {
+  @extend .alert-danger;
 }
 
 
@@ -52,6 +83,21 @@ h1 {
 footer {
   max-width: 768px;
   margin: 0 auto;
+  padding-bottom: 0.5rem;
+}
+
+.solitude-form-group {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.solitude-form-control {
+  max-width: 768px;
+  margin-right: 0.25rem;
+}
+
+#solitude-button {
+  flex-basis: 50px;
 }
 
 // ボタン無効化時のスタイル
@@ -98,8 +144,4 @@ footer {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
-}
-
-#solitude-button {
-  flex-basis: 50px;
 }
