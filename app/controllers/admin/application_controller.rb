@@ -6,15 +6,11 @@
 # you're free to overwrite the RESTful controller actions.
 module Admin
   class ApplicationController < Administrate::ApplicationController
-    before_action :user_signed_check, :my_authenticate_admin
+    before_action :authenticate_admin
 
-    # ログインしていない場合、ルートページにリダイレクト
-    def user_signed_check
-      redirect_to root_path unless user_signed_in?
-    end
-
-    # 管理者でない場合、ルートページにリダイレクト
-    def my_authenticate_admin
+    # ログインしていない場合または管理者でない場合、ルートページにリダイレクト
+    def authenticate_admin
+      authenticate_user!
       redirect_to root_path unless current_user.admin?
     end
   end
