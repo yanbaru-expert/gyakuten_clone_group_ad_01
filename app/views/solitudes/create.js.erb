@@ -1,3 +1,10 @@
 document.getElementById('solitudes').insertAdjacentHTML('beforeend', '<%= j(render @solitude) %>')
 
 document.getElementById('solitude_content').value = ''
+
+document.getElementById('solitude-button').classList.add('disabled')
+
+const solitudes = document.getElementById('solitudes')
+if (solitudes) {
+    window.scroll(0, document.documentElement.scrollHeight)
+}
