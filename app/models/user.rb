@@ -26,4 +26,9 @@ class User < ApplicationRecord
   has_many :graphs, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  validates :email, presence: true
+  validates :encrypted_password, presence: true, uniqueness: { scope: :user_id }
+  validates :nickname, presence: true
+  validates :admin, presence: true
+  validates :user_flag, presence: true
 end
