@@ -30,5 +30,7 @@
       </li>
     </ul>
 
-    <!-- TODO:暫定対応として管理者の文字列固定 将来的にはログインした人のニックネームが入る -->
-    <ul class="navbar-nav navbar-right text-dark">管理者</ul>
+    <ul class="navbar-nav navbar-right text-dark">
+      <%= current_user.nickname %>
+      <% if current_user.admin? %>【管理者】<% end %>
+    </ul>

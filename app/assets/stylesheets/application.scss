@@ -70,7 +70,6 @@
   @extend .alert-danger;
 }
 
-
 #solitudes {
   max-width: 768px;
   margin: 0 auto;
@@ -107,6 +106,7 @@ footer {
   margin: 10px 0;
 }
 
+// 独り言吹き出し
 .solitude-says {
   display: inline-block;
   position: relative;
@@ -118,6 +118,7 @@ footer {
   word-break: break-all;
 }
 
+// 独り言吹き出し
 .solitude-says:after {
   content: "";
   display: inline-block;
@@ -127,4 +128,9 @@ footer {
   border: 8px solid transparent;
   border-right: 18px solid #cfc;
   transform: rotate(35deg);
+
+// モーダル
+button.close {
+  overflow : hidden;
+  outline : none;
 }
