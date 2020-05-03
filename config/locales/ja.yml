@@ -42,6 +42,7 @@ ja:
       default: "%Y/%m/%d(%a) %H:%M"
       long: "%Y年%m月%d日(%a)%H時%M分"
       short: "%m/%d"
+      graph: "%Y/%-m/%-d"
     month_names:
     -
     - 1月
