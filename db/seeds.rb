@@ -49,7 +49,7 @@ graphs = []
     # to_f を入れておかないと整数になるので注意！
     temperature: rand(MIN_TEMP..MAX_TEMP).to_f / DIV_CONSTANT,
     weight: rand(MIN_WEIGHT..MAX_WEIGHT).to_f / DIV_CONSTANT,
-    symptom: SYMP_LIST[rand(SYMP_LIST.length)],
+    symptom: SYMP_LIST.sample,
     other: OTHER + i.to_s
   }
 end
