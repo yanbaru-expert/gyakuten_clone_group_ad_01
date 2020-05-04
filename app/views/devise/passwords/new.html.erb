@@ -2,22 +2,18 @@
   <div class="box-inner">
     <h1>パスワードを忘れましたか？</h1>
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <%= render 'shared/flash_messages' %>
+      <%= devise_error_messages! %>
       <div class="field">
-        <%= f.label :email %><br />
+        <%= f.label :email %>
         <div class="box-email">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true %>
         </div>
       </div>
-
-      <div class="box-login my-3">
+      <div class="box-login my-3 actions">
         <%= f.submit "パスワードの再設定方法を送信する", class: "btn btn-primary btn-block" %>
       </div>
-
     <% end %>
-
     <hr class="devise-link my-5">
-
     <div class="box-forgot-password">
       <%= link_to "ログイン", new_session_path(resource_name) ,class: "btn btn-info btn-block"%>
     </div>
