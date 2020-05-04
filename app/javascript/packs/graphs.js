@@ -166,7 +166,7 @@ document.addEventListener('turbolinks:load', () => {
                       return '体温: ' + tooltipItem.yLabel + '度'
                   },
                   afterLabel: function (tooltipItem) {
-                      return [ '体重: ' + weights[tooltipItem.index] + 'kg', '症状: ' + symptom_conv(symptoms[tooltipItem.index]), others[tooltipItem.index]]
+                      return [ '体重: ' + weights[tooltipItem.index] + 'kg', '症状: ' + symptoms[tooltipItem.index], others[tooltipItem.index]]
                   }
               }
           }
@@ -183,7 +183,7 @@ document.addEventListener('turbolinks:load', () => {
                       return '体重: ' + tooltipItem.yLabel + 'kg'
                   },
                   afterLabel: function (tooltipItem) {
-                      return [ '体温: ' + temperatures[tooltipItem.index] + '℃', '症状: ' + symptom_conv(symptoms[tooltipItem.index]), others[tooltipItem.index]]
+                      return [ '体温: ' + temperatures[tooltipItem.index] + '℃', '症状: ' + symptoms[tooltipItem.index], others[tooltipItem.index]]
                   }
               }
           }
@@ -236,24 +236,4 @@ document.addEventListener('turbolinks:load', () => {
 
   }
 
-  // 症状の内容を数値から文字列に変更
-  function symptom_conv(symptom)
-  {
-    var result;
-
-    if( symptom == 0 )       result = "○調子が良い";
-    else if( symptom == 1 )  result = "○元気";
-    else if( symptom == 2 )  result = "○だるさ";
-    else if( symptom == 3 )  result = "○眠気";
-    else if( symptom == 4 )  result = "○イライラ";
-    else if( symptom == 5 )  result = "○憂うつ";
-    else if( symptom == 6 )  result = "○下腹部痛";
-    else if( symptom == 7 )  result = "○腰痛";
-    else if( symptom == 8 )  result = "○不安";
-    else if( symptom == 9 )  result = "◉熱";
-    else if( symptom == 10 ) result = "◉便秘";
-    else                     result = "×不正な値"
-
-    return result;
-  }
 })
