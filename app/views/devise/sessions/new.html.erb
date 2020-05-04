@@ -2,12 +2,7 @@
   <div class="box-inner">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <h1>ログイン</h1>
-      <% flash.each do |name, msg| %>
-        <div class="alert alert-<%= name %>" role="alert" id="alert">
-          <a href="#" class="close" data-dismiss="alert">×</a>
-          <%= msg %>
-        </div>
-      <% end %>
+      <%= render 'shared/flash_messages' %>
       <div class="box-email">
         <%= f.label :email, "メールアドレス" %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
