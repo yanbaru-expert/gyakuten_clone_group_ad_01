@@ -23,8 +23,7 @@ MAX_WEIGHT = 620
 DIV_CONSTANT = 10
 
 # 記録する症状の範囲
-MIN_SYMP = 0
-MAX_SYMP = 10
+SYMP_LIST = ["○調子が良い", "○元気", "○だるさ", "○眠気", "○イライラ", "○憂うつ", "○下腹部痛", "○腰痛", "○不安", "◉熱", "◉便秘"].freeze
 
 # 記録するその他の文字列
 OTHER = "テスト".freeze
@@ -50,7 +49,7 @@ graphs = []
     # to_f を入れておかないと整数になるので注意！
     temperature: rand(MIN_TEMP..MAX_TEMP).to_f / DIV_CONSTANT,
     weight: rand(MIN_WEIGHT..MAX_WEIGHT).to_f / DIV_CONSTANT,
-    symptom: rand(MIN_SYMP..MAX_SYMP),
+    symptom: SYMP_LIST.sample,
     other: OTHER + i.to_s
   }
 end
