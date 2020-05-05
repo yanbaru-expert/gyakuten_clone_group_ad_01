@@ -6,9 +6,12 @@ Rails.application.routes.draw do
     root to: "movies#index"
   end
 
-  devise_for :users
 
-  root "solitudes#index"
+  devise_for :users, controllers: {
+    sessions: "users/sessions"
+  }
+  resources :trainings
+  root to: "graphs#index"
 
   resources :meals
   resources :movies
@@ -17,4 +20,8 @@ Rails.application.routes.draw do
   resources :solitudes
   resources :trainings
   resource :graphs, only: %i[index create update]
+
+  devise_scope :user do
+    get "sign_in", to: "users/sessions#create"
+  end
 end
