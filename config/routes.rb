@@ -6,9 +6,7 @@ Rails.application.routes.draw do
     root to: "movies#index"
   end
 
-  devise_for :users, controllers: {
-    sessions: "users/sessions"
-  }
+  devise_for :users, skip: :all
   resources :trainings
   root to: "graphs#index"
   resources :meals
@@ -19,6 +17,10 @@ Rails.application.routes.draw do
   resource :graphs, only: %i[index create update]
 
   devise_scope :user do
-    get "sign_in", to: "users/sessions#create"
+    get "/users/sign_in", to: "users/sessions#new", as: :new_user_session
+    post "/users/sign_in", to: "users/sessions#create", as: :user_session
+    delete "/users/sign_out", to: "users/sessions#destroy", as: :destroy_user_session
+    get "/users/password", to: "users/passwords#new", as: :new_user_password
+    post "/users/password", to: "users/passwords#create", as: :user_password
   end
 end
