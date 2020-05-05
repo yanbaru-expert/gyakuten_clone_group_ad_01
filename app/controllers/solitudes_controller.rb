@@ -1,5 +1,4 @@
 class SolitudesController < ApplicationController
-
   def index
     @solitudes = Solitude.all
   end
@@ -9,8 +8,8 @@ class SolitudesController < ApplicationController
   end
 
   private
+
   def solitude_params
     params.require(:solitude).permit(:content)
   end
-
 end

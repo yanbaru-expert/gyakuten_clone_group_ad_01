@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root 'solitudes#index'
+  root "solitudes#index"
 
   resources :meals
   resources :movies
@@ -17,5 +17,4 @@ Rails.application.routes.draw do
   resources :solitudes
   resources :trainings
   resource :graphs, only: %i[index create update]
-
 end
