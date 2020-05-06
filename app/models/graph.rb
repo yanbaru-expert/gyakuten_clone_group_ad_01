@@ -5,7 +5,7 @@
 #  id          :bigint           not null, primary key
 #  date        :date             not null
 #  other       :text
-#  symptom     :integer          not null
+#  symptom     :string           not null
 #  temperature :decimal(4, 2)    not null
 #  weight      :decimal(4, 1)    not null
 #  created_at  :datetime         not null
