@@ -28,4 +28,12 @@ class User < ApplicationRecord
   validates :nickname, presence: true
   validates :admin, presence: true
   validates :user_flag, presence: true
+
+  def active_for_authentication?
+    super && user_flag?
+  end
+
+  def inactive_message
+    user_flag? ? super : "現在利用者でないためログインできません。管理者に問い合わせてください。"
+  end
 end
