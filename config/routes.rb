@@ -26,5 +26,9 @@ Rails.application.routes.draw do
     patch "/users", to: "users/registrations#update", as: :user_registration
     put "/users", to: "users/registrations#update", as: :put_user_registration
     delete "/users", to: "users/registrations#destroy", as: :delete_user_registration
+    get "/users/password/edit", to: "users/passwords#edit", as: :edit_user_password
+    put "/users/password", to: "users/passwords#update", as: :update_user_password
   end
+
+  mount LetterOpenerWeb::Engine, at: "/lo" if Rails.env.development?
 end
