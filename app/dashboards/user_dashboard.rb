@@ -13,7 +13,7 @@ class UserDashboard < Administrate::BaseDashboard
     nickname: Field::String,
     admin: Field::Boolean,
     user_flag: Field::Boolean,
-    password: Field::String
+    password: Field::Password
   }.freeze
 
   # COLLECTION_ATTRIBUTES
