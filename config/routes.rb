@@ -17,17 +17,17 @@ Rails.application.routes.draw do
   resource :graphs, only: %i[index create update]
 
   devise_scope :user do
-    get "/users/sign_in", to: "users/sessions#new", as: :new_user_session
-    post "/users/sign_in", to: "users/sessions#create", as: :user_session
-    delete "/users/sign_out", to: "users/sessions#destroy", as: :destroy_user_session
-    get "/users/password", to: "users/passwords#new", as: :new_user_password
-    post "/users/password", to: "users/passwords#create", as: :user_password
-    get "/users/edit", to: "users/registrations#edit", as: :edit_user_ragistration
-    patch "/users", to: "users/registrations#update", as: :user_registration
-    put "/users", to: "users/registrations#update", as: :put_user_registration
-    delete "/users", to: "users/registrations#destroy", as: :delete_user_registration
-    get "/users/password/edit", to: "users/passwords#edit", as: :edit_user_password
-    put "/users/password", to: "users/passwords#update", as: :update_user_password
+    get "/users/sign_in", to: "devise/sessions#new", as: :new_user_session
+    post "/users/sign_in", to: "devise/sessions#create", as: :user_session
+    delete "/users/sign_out", to: "devise/sessions#destroy", as: :destroy_user_session
+    get "/users/password", to: "devise/passwords#new", as: :new_user_password
+    post "/users/password", to: "devise/passwords#create", as: :user_password
+    get "/users/edit", to: "devise/registrations#edit", as: :edit_user_registration
+    patch "/users", to: "devise/registrations#update", as: :user_registration
+    put "/users", to: "devise/registrations#update", as: :put_user_registration
+    delete "/users", to: "devise/registrations#destroy", as: :delete_user_registration
+    get "/users/password/edit", to: "devise/passwords#edit", as: :edit_user_password
+    put "/users/password", to: "devise/passwords#update", as: :update_user_password
   end
 
   mount LetterOpenerWeb::Engine, at: "/lo" if Rails.env.development?

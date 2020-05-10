@@ -17,6 +17,8 @@ gem "jbuilder", "~> 2.7"
 gem "kaminari"
 gem "letter_opener_web", group: :development
 gem "pg", ">= 0.18", "< 2.0"
+gem "pry-byebug"
+gem "pry-doc"
 gem "puma", "~> 4.1"
 gem "rails", "6.0.2.1"
 gem "rails-i18n", "~> 6.0"
