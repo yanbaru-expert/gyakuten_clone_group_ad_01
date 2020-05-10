@@ -61,13 +61,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_mailer.default_url_options = { host: "localhost:3000" }
-  # for SMTP
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address: "127.0.0.1",
-    domain: "example.com",
-    port: 25
-  }
 
   config.action_mailer.delivery_method = :letter_opener_web
 end
