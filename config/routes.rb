@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     delete "/users/sign_out", to: "users/sessions#destroy", as: :destroy_user_session
     get "/users/password", to: "users/passwords#new", as: :new_user_password
     post "/users/password", to: "users/passwords#create", as: :user_password
-    get "/users/edit", to: "users/registrations#edit", as: :edit_user_ragistration
+    get "/users/edit", to: "users/registrations#edit", as: :edit_user_registration
     patch "/users", to: "users/registrations#update", as: :user_registration
     put "/users", to: "users/registrations#update", as: :put_user_registration
     delete "/users", to: "users/registrations#destroy", as: :delete_user_registration
