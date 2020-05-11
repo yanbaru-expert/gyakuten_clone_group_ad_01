@@ -1,6 +1,7 @@
 document.addEventListener('turbolinks:load', () => {
 
   const solitudeButton = document.getElementById('solitude-button')
+  const solitudeContent = document.getElementById('solitude-content')
 
   const button_activation = () => {
       if (solitudeContent.value === '') {
@@ -12,6 +13,6 @@ document.addEventListener('turbolinks:load', () => {
 
   solitudeContent.addEventListener('input', () => {
       button_activation()
-  }
+  })
 
 })
