@@ -27,7 +27,9 @@ ja:
         updated_at: 更新日
         nickname: ニックネーム
     models:
-      user: ユーザ
+      user: ユーザー
+      movie: 動画
+      column: コラム
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
@@ -141,3 +143,21 @@ ja:
       not_saved:
         one: エラーが発生したため %{resource} は保存されませんでした。
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+  helpers:
+    label:
+      movie:
+        id: ID
+        title: タイトル
+        url: URL
+        created_at: 更新日
+      column:
+        id: ID
+        date: 日付
+        title: タイトル
+        detail: コラムの詳細
+      user:
+        id: ID
+        email: メールアドレス
+        nickname: ニックネーム
+        admin: 管理者権限
+        user_flag: 利用者フラグ
