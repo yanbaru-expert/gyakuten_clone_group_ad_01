@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   # 全ページをログイン必須とする
   before_action :authenticate_user!
-  before_action :configure_permitted_parameters, only: [:update]
   before_action :set_host
+  before_action :configure_permitted_parameters, only: [:update], if: :devise_controller?
 
   private
 
