@@ -1,4 +1,10 @@
 <h1 class="my-3">食事新規投稿</h1>
+
+<!-- ここにezdzの画像Drag & Dropが出て欲しい！ -->
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="file" accept="image/png, image/jpeg">
+</form>
+
 <section id="meal_form">
   <div class="meal_form-container">
     <%= form_with model: @meal, local: true do |f| %>
