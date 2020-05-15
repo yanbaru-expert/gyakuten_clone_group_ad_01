@@ -50,6 +50,12 @@ ActiveRecord::Schema.define(version: 2020_04_27_121525) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "solitudes", force: :cascade do |t|
+    t.text "content", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "trainings", force: :cascade do |t|
     t.string "image"
     t.text "content", null: false

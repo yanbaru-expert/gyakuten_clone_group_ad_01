@@ -1,0 +1,8 @@
+<footer class="fixed-bottom" id="footer">
+  <%= form_with model: Solitude.new do |f| %>
+    <div class="solitude-form-group d-flex">
+      <%= f.text_field :content, class: 'solitude-form-control', id: 'solitude-content', rows: '1', maxlength: '200' %>
+      <%= f.submit '送信', class: 'btn btn-primary btn-block disabled', id: 'solitude-button' %>
+    </div>
+  <% end %>
+</footer>

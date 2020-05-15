@@ -9,11 +9,13 @@ Rails.application.routes.draw do
   devise_for :users, skip: :all
   resources :trainings
   root to: "graphs#index"
+
   resources :meals
   resources :movies
   resources :columns
   resources :graphs
-
+  resources :solitudes
+  resources :trainings
   resource :graphs, only: %i[index create update]
 
   devise_scope :user do
