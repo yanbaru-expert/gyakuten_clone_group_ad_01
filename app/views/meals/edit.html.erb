@@ -2,7 +2,7 @@
 <section id="meal_form">
   <div class="meal_form-container">
     <%= form_with model: @meal, url: "/meals/#{@meal.id}", method: :patch, local: true do |f| %>
-      <%= f.file_field :image %>
+      <%= f.file_field :image, class: "center-block", id: 'image-form', accept: 'image/png, image/jpeg, image/gif' %>
       <div class="form-group my-3">
         <%= f.text_area :content, class: 'form-control', rows:5, required: true %>
         <%= f.submit "更新", class: 'btn btn-primary btn-block my-3' %>
