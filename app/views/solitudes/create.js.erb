@@ -1,7 +1,9 @@
 document.getElementById('solitude-button').classList.add('disabled')
-const solitudeContent = document.getElementById('solitude-content')
-if (solitudeContent) {
+
+var solitudeContent = document.getElementById('solitude-content')
+  if (solitudeContent) {
     window.scroll(0, document.documentElement.scrollHeight)
-}
+  }
+
 document.getElementById('solitudes').insertAdjacentHTML('beforeend', '<%= j(render @solitude) %>')
 document.getElementById('solitude-content').value = ''
