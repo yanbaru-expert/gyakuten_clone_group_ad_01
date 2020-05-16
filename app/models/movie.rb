@@ -25,6 +25,6 @@ class Movie < ApplicationRecord
 
   # 更新を許可するカラムを定義
   def self.updatable_attributes
-    ["id", "title", "url"]
+    %w[id title url]
   end
 end

@@ -10,7 +10,6 @@ module Admin
       end
 
       redirect_to admin_movies_path
-
     end
   end
 end

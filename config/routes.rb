@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :movies do
-      collection {post :import}
+      collection { post :import }
     end
     resources :columns do
-      collection {post :import}
+      collection { post :import }
     end
     resources :users
     root to: "movies#index"
