@@ -19,7 +19,7 @@ class Movie < ApplicationRecord
       # CSVからデータを取得し、設定する
       movie.attributes = row.to_hash.slice(*updatable_attributes)
       # 保存する
-      movie.save
+      movie.save!
     end
   end
 

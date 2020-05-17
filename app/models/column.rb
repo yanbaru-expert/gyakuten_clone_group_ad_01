@@ -21,7 +21,7 @@ class Column < ApplicationRecord
       # CSVからデータを取得し、設定する
       column.attributes = row.to_hash.slice(*updatable_attributes)
       # 保存する
-      column.save
+      column.save!
     end
   end
 
