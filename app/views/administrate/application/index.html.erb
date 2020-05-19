@@ -33,6 +33,10 @@ It renders the `_table` partial to display details about the resources.
     <%= content_for(:title) %>
   </h1>
 
+<<<<<<< HEAD
+=======
+  <%# CSV Import Start %>
+>>>>>>> f145a4274d70050b03c3eb3aca6e63e5686f5bae
   <% if resource_name != :user %>
     <% if resource_name == :movie %>
       <% path = import_admin_movies_path %>
@@ -45,6 +49,10 @@ It renders the `_table` partial to display details about the resources.
     <%= submit_tag "インポート" %>
     <% end %>
   <% end %>
+<<<<<<< HEAD
+=======
+  <%# CSV Import End %>
+>>>>>>> f145a4274d70050b03c3eb3aca6e63e5686f5bae
 
   <% if show_search_bar %>
     <%= render(
