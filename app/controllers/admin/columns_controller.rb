@@ -1,8 +1,14 @@
 module Admin
   class ColumnsController < Admin::ApplicationController
     def import
-      Column.import(params[:file])
-      flash[:success] = "コラムCSVファイルのインポートに成功しました。"
+      begin
+        ActiveRecord::Base.transaction do
+          Column.import(params[:file])
+        end
+        flash[:success] = "コラムCSVファイルのインポートに成功しました。"
+      rescue StandardError => e
+        flash[:alert] = e.message
+      end
       redirect_to admin_columns_path
     end
   end
