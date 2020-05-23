@@ -12,6 +12,7 @@ gem "devise"
 gem "devise-bootstrap-views", "~> 1.0"
 gem "devise-i18n"
 gem "flatpickr"
+gem "fog-aws"
 gem "gon"
 gem "jbuilder", "~> 2.7"
 gem "kaminari"
@@ -44,4 +45,8 @@ group :test do
   gem "capybara", ">= 2.15"
   gem "selenium-webdriver"
   gem "webdrivers"
+end
+
+group :production do
+  gem "pg", ">= 0.18", "< 2.0"
 end
