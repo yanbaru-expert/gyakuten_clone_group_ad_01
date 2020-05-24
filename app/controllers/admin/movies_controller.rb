@@ -6,7 +6,7 @@ module Admin
           Movie.import(params[:file])
         end
         flash[:success] = "動画CSVファイルのインポートに成功しました。"
-      rescue StandardError => e
+      rescue ActiveRecord::RecordInvalid => e
         flash[:alert] = e.message
       end
       redirect_to admin_movies_path
