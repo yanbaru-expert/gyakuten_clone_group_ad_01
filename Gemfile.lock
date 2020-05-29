@@ -193,7 +193,7 @@ GEM
       pry (~> 0.11)
       yard (~> 0.9.11)
     public_suffix (4.0.4)
-    puma (4.3.3)
+    puma (4.3.5)
       nio4r (~> 2.0)
     rack (2.2.2)
     rack-proxy (0.6.5)
@@ -343,7 +343,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   pry-byebug
   pry-doc
-  puma (~> 4.1)
+  puma (~> 4.3)
   rails (= 6.0.2.1)
   rails-i18n (~> 6.0)
   redcarpet
