@@ -1,27 +1,6 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    resources :movies do
-      collection { post :import }
-    end
-    resources :columns do
-      collection { post :import }
-    end
-    resources :users
-    root to: "movies#index"
-  end
-
+  root "graphs#index"
   devise_for :users, skip: :all
-  resources :trainings
-  root to: "graphs#index"
-
-  resources :meals
-  resources :movies
-  resources :columns
-  resources :graphs
-  resources :solitudes
-  resources :trainings
-  resource :graphs, only: %i[index create update]
-
   devise_scope :user do
     get "/users/sign_in", to: "devise/sessions#new", as: :new_user_session
     post "/users/sign_in", to: "devise/sessions#create", as: :user_session
@@ -34,6 +13,24 @@ Rails.application.routes.draw do
     delete "/users", to: "devise/registrations#destroy", as: :delete_user_registration
     get "/users/password/edit", to: "devise/passwords#edit", as: :edit_user_password
     put "/users/password", to: "devise/passwords#update", as: :update_user_password
+  end
+  resources :trainings
+  resources :meals
+  resources :movies
+  resources :columns
+  resources :solitudes
+  resources :trainings
+  resource :graphs, only: %i[index create update]
+
+  namespace :admin do
+    resources :movies do
+      collection { post :import }
+    end
+    resources :columns do
+      collection { post :import }
+    end
+    resources :users
+    root to: "movies#index"
   end
 
   mount LetterOpenerWeb::Engine, at: "/lo" if Rails.env.development?
