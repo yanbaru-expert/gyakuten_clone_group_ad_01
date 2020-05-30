@@ -25,6 +25,7 @@ gem "rails", "6.0.2.1"
 gem "rails-i18n", "~> 6.0"
 gem "redcarpet"
 gem "rmagick"
+gem "roo"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
 
