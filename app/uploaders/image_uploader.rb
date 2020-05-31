@@ -1,8 +1,13 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
-  storage :file
   process convert: "jpg"
   process resize_to_limit: [200, 200]
+
+  if Rails.env.production?
+    storage :fog
+  else
+    storage :file
+  end
 
   # 保存するディレクトリ名
   def store_dir
