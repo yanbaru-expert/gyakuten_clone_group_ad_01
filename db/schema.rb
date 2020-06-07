@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_04_27_121525) do
     t.date "date", null: false
     t.decimal "temperature", precision: 4, scale: 2, null: false
     t.decimal "weight", precision: 4, scale: 1, null: false
-    t.string "symptom", null: false
+    t.integer "symptom", null: false
     t.text "other"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
