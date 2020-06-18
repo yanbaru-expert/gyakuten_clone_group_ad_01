@@ -28,6 +28,7 @@ gem "rmagick"
 gem "roo"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
+gem 'fog-aws'
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
@@ -46,4 +47,8 @@ group :test do
   gem "capybara", ">= 2.15"
   gem "selenium-webdriver"
   gem "webdrivers"
+end
+
+group :production do
+  gem "pg", ">= 0.18", "< 2.0"
 end
